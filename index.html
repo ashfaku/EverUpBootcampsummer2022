@@ -1,28 +1,69 @@
 <!DOCTYPE HTML>
 <html>
 	<title>Hello</title>
-	
-	<style></style>
+	<style>
+		body
+		{
+			background-color: #d3d3d3;
+		}
+		.text
+		{
+			font-size: 2vw;
+		}
+		#image
+		{
+			animation: rot 1s linear infinite;
+		   -webkit-animation-fill-mode: forwards;
+		   -moz-animation-fill-mode: forwards;
+		   -ms-animation-fill-mode: forwards;
+		   -o-animation-fill-mode: forwards;
+		   animation-fill-mode: forwards;
+		}
+		#image:hover
+		{
+			opacity: 0;
+		}
+		@keyframes rot
+		{
+			0%
+			{
+				transform: rotate(0deg); 
+				transform: rotateY(0deg);
+			}
+			100%
+			{
+				transform: rotate(360deg);
+				transform: rotateY(360deg);
+			}
+		}
+		#info
+		{
+			border-style: dashed;
+			max-width: 35%;
+			border-color: #CB6015;
+		}
+	</style>
 	<script></script>
 
 	<body>
-		<h1>Assignment 1<h1>
+		<h1>Assignment 1</h1>
 		<br />
 		<br />
 		
-		<div>Hey! It looks like a paragraph, but there is a block/box here too. Find that html element other than &ltp&gt or &lth&gt</div>
+		<div class = "text">Hey! It looks like a paragraph, but there is a block/box here too. Find that html element other than &ltp&gt or &lth&gt</div>
 		<br />
 		<br />
-		<div><a href = "https://www.google.com">This is a link to Google</a></div>
+		<div class = "text"><a href = "https://www.google.com">This is a link to Google</a></div>
 		<br />
-		<img src = "image.PNG" />
-		<p>
-			<div><em>Email me by clicking on</em> <a href = "mailto:ashmanpapet@gmail.com">Ashfak Uddin</a></div>
-			<div><em>Visit us at:</em></div>
-			<div><a href = "https://disneyworld.disney.go.com">Disney World</a></div>
-			<div><em>Box 678, Disneyland</em></div>
-			<div><em>USA</em></div>
-		</p>
+		<img src = "image.PNG" id = "image" />
+		<div id = "info">
+			<div class = "text"><em>Email me by clicking on</em> <a href = "mailto:ashmanpapet@gmail.com">Ashfak Uddin</a></div>
+			<div class = "text"><em>Visit us at:</em></div>
+			<div class = "text"><a href = "https://disneyworld.disney.go.com">Disney World</a></div>
+			<div class = "text"><em>Box 678, Disneyland</em></div>
+			<div class = "text"><em>USA</em></div>
+		</div>
+		<div class = "text"> P.S: I've hosted it <a href = "https://ashfaku.github.io/EverUpBootcampsummer2022/">here</a> if you wish to see how it looks on mobile.</div> 
 	</body>
 
 </html>
