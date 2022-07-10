@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html>
-	<title>Hello</title>
+	<title>Assignment 2</title>
 	<style>
 		html, body 
 		{ 
@@ -25,7 +25,7 @@
 			position: relative;
 			left: 10%;
 			top: 0%;
-			background-color: #87CEEB;
+			background-image: linear-gradient(to bottom right, blue, red);		
 		}
 		#embed
 		{
@@ -33,7 +33,7 @@
 			position: relative;
 			left: 30%;
 			top: 5%;
-			height: 40vh;
+			height: 40%;
 		}
 		#pink
 		{
@@ -41,7 +41,7 @@
 			left: 60%;
 			top: 5%;
 			width: 30%;
-			height: 30vh;
+			height: 30%;
 			font-size: 3vh;
 		}
 		#arial
@@ -50,17 +50,29 @@
 			font-family: arial;
 			height: 33%;
 		}
+		#arial:hover
+		{
+			opacity: 0;
+		}
 		#courier
 		{
 			background-color: pink;
 			font-family: courier;
 			height: 33%;
 		}
+		#courier:hover
+		{
+			opacity: 0;
+		}
 		#corsiva
 		{
 			background-color: #FFB6C1;
-			font-family: corsiva;
+			font-family: coursiva;
 			height: 34%;
+		}
+		#corsiva:hover
+		{
+			opacity: 0;
 		}
 		.content
 		{
@@ -77,6 +89,10 @@
 			border-style: solid;
 			border-color: black;
 			border-radius: 10px;
+		}
+		#build:hover
+		{
+			
 		}
 		#alert
 		{
@@ -111,6 +127,18 @@
 			background-color: black;
 			align: center;
 		}
+		#footer
+		{
+			width: 80%;
+			background-color: black;
+			color: white;
+			position: relative;
+			left: 10%;
+			text-align: center;
+			padding-top: 2%;
+			padding-bottom: 2%;
+			font-size: 2vw;
+		}
 	</style>
 	<script></script>
 	<body>
@@ -141,6 +169,9 @@
 			</div>
 			<img src = "buildings.jpg" id = "build"/>
 			<button id = "alert" onclick = "alert('Hello!');">This is a button</button>
+		</div>
+		<div id = "footer">
+			study button, input,and textarea elements
 		</div>
 	</body>
 </html>
