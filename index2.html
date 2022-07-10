@@ -2,6 +2,13 @@
 <html>
 	<title>Hello</title>
 	<style>
+		html, body 
+		{ 
+			min-height: 100% !important;
+			height: 100%; 
+			width: 100%; 
+			margin: 0; 
+		}
 		body
 		{
 			background: url('scenery.jpeg') no-repeat center center fixed;
@@ -13,7 +20,8 @@
 		#page
 		{
 			width: 80%;
-			height: 100vh;
+			min-height: 100% !important;
+			height: 100%;
 			position: relative;
 			left: 10%;
 			top: 0%;
@@ -24,14 +32,14 @@
 			width: 40%;
 			position: relative;
 			left: 30%;
-			top: 10%;
+			top: 5%;
 			height: 40vh;
 		}
 		#pink
 		{
 			position: relative;
 			left: 60%;
-			top: 20%;
+			top: 5%;
 			width: 30%;
 			height: 30vh;
 			font-size: 3vh;
@@ -65,7 +73,7 @@
 			height: 30%;
 			position: relative;
 			left: 10%;
-			bottom: 10%;
+			top: -25%;
 			border-style: solid;
 			border-color: black;
 			border-radius: 10px;
@@ -73,16 +81,46 @@
 		#alert
 		{
 			position: relative;
-			top: -6%;
+			top: -20%;
 			left: 37%;
 			width: 15%;
 			border-radius: 10px;
+			font-size: 1vw;
 			background-color: orange;
+		}
+		ul#menu li
+		{
+			font-size: 2vw;
+			display: inline;
+			padding-left: 5%;
+			padding-right: 5%;
+			padding-bottom: 1%;
+			color: white;
+			border-style: solid;
+			border-color: white;
+		}
+		ul#menu li:hover
+		{
+			background-color: orange;
+		}
+		#menu
+		{
+			height: 7%;
+			position: relative;
+			text-align: center;
+			background-color: black;
+			align: center;
 		}
 	</style>
 	<script></script>
 	<body>
 		<div id = "page">
+			<ul id = "menu">
+				<li>Home</li>
+				<li>About</li>
+				<li>Book</li>
+				<li>Contact</li>
+			</ul>
 			<iframe id = "embed" src = "index.html" title="Iframe"></iframe>
 			<div id = "pink">
 				<div id = "arial">
@@ -102,7 +140,7 @@
 				</div>
 			</div>
 			<img src = "buildings.jpg" id = "build"/>
-			<button id = "alert" onclick = "">This is a button</button>
+			<button id = "alert" onclick = "alert('Hello!');">This is a button</button>
 		</div>
 	</body>
 </html>
