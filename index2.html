@@ -34,6 +34,7 @@
 			left: 30%;
 			top: 5%;
 			height: 40%;
+			border: 10px solid pink;
 		}
 		#pink
 		{
@@ -42,7 +43,7 @@
 			top: 5%;
 			width: 30%;
 			height: 30%;
-			font-size: 3vh;
+			font-size: 1vw;
 		}
 		#arial
 		{
@@ -77,7 +78,7 @@
 		.content
 		{
 			position: relative; 
-			top: 27%;
+			top: 50%;
 		}
 		#build
 		{
@@ -89,10 +90,19 @@
 			border-style: solid;
 			border-color: black;
 			border-radius: 10px;
+			animation: rotate360 1.2s linear infinite;  /* animation set */
+			animation-play-state: paused;               /* but paused */
 		}
 		#build:hover
 		{
-			
+			animation-play-state: running;
+		}
+		@keyframes rotate360
+		{
+			to 
+			{
+				transform: rotate(360deg);
+			}
 		}
 		#alert
 		{
@@ -141,6 +151,7 @@
 		}
 	</style>
 	<script></script>
+	<script src="https://kit.fontawesome.com/0137bf0349.js" crossorigin="anonymous"></script>
 	<body>
 		<div id = "page">
 			<ul id = "menu">
@@ -173,5 +184,6 @@
 		<div id = "footer">
 			study button, input,and textarea elements
 		</div>
+		
 	</body>
 </html>
