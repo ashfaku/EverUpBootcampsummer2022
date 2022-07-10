@@ -34,6 +34,7 @@
 			left: 30%;
 			top: 5%;
 			height: 40%;
+			z-index: 1;
 			border: 10px solid pink;
 		}
 		#pink
@@ -90,14 +91,14 @@
 			border-style: solid;
 			border-color: black;
 			border-radius: 10px;
-			animation: rotate360 1.2s linear infinite;  /* animation set */
-			animation-play-state: paused;               /* but paused */
+			animation: r 2s linear infinite;
+			animation-play-state: paused;
 		}
 		#build:hover
 		{
 			animation-play-state: running;
 		}
-		@keyframes rotate360
+		@keyframes r
 		{
 			to 
 			{
@@ -127,6 +128,7 @@
 		}
 		ul#menu li:hover
 		{
+			cursor: pointer;
 			background-color: orange;
 		}
 		#menu
@@ -149,8 +151,22 @@
 			padding-bottom: 2%;
 			font-size: 2vw;
 		}
+		#reset
+		{
+			position: relative;
+			left: -10%;
+			top: -19%;
+			font-size: 2vw;
+			z-index: -.5;
+		}
 	</style>
-	<script></script>
+	<script>
+		function reset()
+		{
+			var img = document.getElementById('build');
+			console.log(img.style);
+		}
+	</script>
 	<script src="https://kit.fontawesome.com/0137bf0349.js" crossorigin="anonymous"></script>
 	<body>
 		<div id = "page">
@@ -179,6 +195,7 @@
 				</div>
 			</div>
 			<img src = "buildings.jpg" id = "build"/>
+<!--		<button id = "reset" onclick = "reset();">Reset</button> !-->
 			<button id = "alert" onclick = "alert('Hello!');">This is a button</button>
 		</div>
 		<div id = "footer">
