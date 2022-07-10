@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+	<title>Project 1</title>
+	<style>
+		body
+		{
+			background-color: grey;
+		}
+		#header
+		{
+			text-align: center;
+			font-size: 2vw;
+		}
+		.divider 
+		{
+			transform: rotate(90deg);
+			position: relative;
+		}
+		#first
+		{
+			left: -17%;
+		}
+		#second
+		{
+			left: 16%;
+		}
+		#attractions
+		{
+			width: 28%;
+		}
+		table, th, td 
+		{
+			border: 5px solid black;
+			border-collapse: collapse;
+			background-color:#98fb98;
+			background-color:#000080;
+			padding: 5%;
+			text-align:center;
+		}
+		th, td
+		{
+			font-size: 1vw;
+			width: 25%;
+		}
+	</style>
+	<script>
+		function initialize()
+		{
+			var table = document.getElementById("attractions");
+			var data = [
+				{
+					name: "statue of Liberty",
+					location: "idk",
+					open: 123,
+					v: "No"
+				},
+				{
+					name: "idf9j",
+					location: "eifuvnj",
+					open: -1,
+					v: "y"
+				}
+			];
+			for (let i = 0; i < data.length; i++)
+			{
+				var row = document.createElement("TR");
+				table.appendChild(row);
+				cell = document.createElement("TD");
+				cell.innerHTML = data[i].name;
+				row.appendChild(cell);
+				cell = document.createElement("TD");
+				cell.innerHTML = data[i].location;
+				row.appendChild(cell);				
+				cell = document.createElement("TD");
+				cell.innerHTML = data[i].open;
+				row.appendChild(cell);				
+				cell = document.createElement("TD");
+				cell.innerHTML = data[i].v;
+				row.appendChild(cell);				
+		
+			}
+			
+		}
+	</script>
+	<body onload = "initialize();">
+		<div id = "header">New York City</div>
+		<hr>
+		<hr class = "divider" id = "first">
+		<hr class = "divider" id = "second">
+		<table id = "attractions">
+			<tr>
+				<th>Landmark</th>
+				<th>Location</th>
+				<th>Hours Open</th>
+				<th>Free To Visit?</th>
+			</tr>
+		</table>
+	</body>
+</html>
