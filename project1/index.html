@@ -15,6 +15,7 @@
 		{
 			transform: rotate(90deg);
 			position: relative;
+			width: 50%;
 		}
 		#first
 		{
@@ -30,10 +31,9 @@
 		}
 		table, th, td 
 		{
-			border: 5px solid black;
+			border: .2vw solid black;
 			border-collapse: collapse;
 			background-color:#98fb98;
-			background-color:#000080;
 			padding: 5%;
 			text-align:center;
 		}
@@ -42,6 +42,43 @@
 			font-size: 1vw;
 			width: 25%;
 		}
+		.tableimg
+		{
+			width: 100%;
+			height: 100%;
+		}
+		#logo
+		{
+			width: 5%;
+			height: auto;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		#desc
+		{
+			width: 30%;
+			height: auto;
+			position: absolute;
+			left: 35%;
+			top: 15%;
+			font-size: 2vw;
+		}
+		#content
+		{
+			position: absolute;
+			width: 28%;
+			height: auto;
+			left: 69%;
+			top: 15%;
+			font-size: 2vw;
+			border: 2px solid red;
+			opacity: 0;			
+			background-image: linear-gradient(to bottom right, blue, red);		
+			color: yellow;
+			border-radius: 50px;
+			padding: 2%;
+		}
 	</style>
 	<script>
 		function initialize()
@@ -49,16 +86,25 @@
 			var table = document.getElementById("attractions");
 			var data = [
 				{
-					name: "statue of Liberty",
-					location: "idk",
-					open: 123,
-					v: "No"
+					name: "Eiffel Tower",
+					location: "Paris",
+					open: "Until 10:30 PM",
+					url: "tower.jpg",
+					desc: "The Eiffel Tower is a wrought iron tower that stands 1,063 ft (324 m) tall. It was designed for the Exposition Universelle, a world fair held in Paris in 1889. It is currently the most famous symbol of Paris."
 				},
 				{
-					name: "idf9j",
-					location: "eifuvnj",
-					open: -1,
-					v: "y"
+					name: "Palace of Versailles",
+					location: "Versailles",
+					open: "Until 5:30 PM",
+					url: "palace.jpg",
+					desc: "Palace of Versailles, Baroque palace southwest of Paris built chiefly under Louis XIV. It was the principal residence of the French kings and the seat of government from 1682 to 1789, with some 1,000 courtiers and 4,000 attendants residing there. Originally a hunting lodge, it was enlarged by Louis XIII and Louis XIV."
+				},
+				{
+					name: "Hall of Mirrors",
+					location: "Versailles",
+					open: "Until 5:30 PM",
+					url: "mirrors.jpg",
+					desc: "Overlooking Versailles Gardens, the 17th century Hall of Mirrors owes its name to the seventeen mirror arches facing seventeen windows overlooking the Park. Each arch contains twenty-one mirrors for a total of 357 mirrors. The Hall of Mirrors' dimensions are 73m × 10.5m × 12.3m."
 				}
 			];
 			for (let i = 0; i < data.length; i++)
@@ -73,17 +119,26 @@
 				row.appendChild(cell);				
 				cell = document.createElement("TD");
 				cell.innerHTML = data[i].open;
-				row.appendChild(cell);				
+				row.appendChild(cell);
 				cell = document.createElement("TD");
-				cell.innerHTML = data[i].v;
-				row.appendChild(cell);				
-		
+				var img = document.createElement("IMG");
+				img.src = "./images/photos/table/" + data[i].url;
+				img.className = "tableimg";
+				img.onclick = () => {
+					document.getElementById("content").style.opacity = 1;
+					document.getElementById("content").innerHTML = data[i].desc;
+				};
+				cell.appendChild(img);
+				row.appendChild(cell);
 			}
 			
 		}
 	</script>
 	<body onload = "initialize();">
-		<div id = "header">New York City</div>
+		<div id = "header">
+			<img src = "./images/logos/logo.png" / id = "logo"><br>
+			France
+		</div>
 		<hr>
 		<hr class = "divider" id = "first">
 		<hr class = "divider" id = "second">
@@ -92,8 +147,17 @@
 				<th>Landmark</th>
 				<th>Location</th>
 				<th>Hours Open</th>
-				<th>Free To Visit?</th>
+				<th>Picture</th>
 			</tr>
 		</table>
+		<p id = "desc"> 
+			France is one of the oldest nations on Earth and the most ethnically diverse country in Europe.
+			These deep and broad influences have made France a world leader throughout history in nearly all 
+			aspects of culture, including cuisine, wine-making, politics, philosophy, music, art, film,
+			fashion, literature, and sports.
+		</p>
+		<p id = "hmm">Click the images to find out more!</p>
+		<p id = "content"></p>
+		<hr>
 	</body>
 </html>
