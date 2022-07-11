@@ -94,6 +94,22 @@
 				top: 8%;
 			}
 		}
+		@media only screen and (max-width: 450px) 
+		{
+			body 
+			{
+				background-color: green;
+			}
+			#desc
+			{
+				top: 4%;
+			}
+			#content
+			{
+				top: 4%;
+			}
+		}
+		
 	</style>
 	<script>
 		function initialize()
@@ -122,6 +138,7 @@
 					desc: "Overlooking Versailles Gardens, the 17th century Hall of Mirrors owes its name to the seventeen mirror arches facing seventeen windows overlooking the Park. Each arch contains twenty-one mirrors for a total of 357 mirrors. The Hall of Mirrors' dimensions are 73m × 10.5m × 12.3m."
 				}
 			];
+			var content = document.getElementById("content");
 			for (let i = 0; i < data.length; i++)
 			{
 				var row = document.createElement("TR");
@@ -140,8 +157,9 @@
 				img.src = "./images/photos/table/" + data[i].url;
 				img.className = "tableimg";
 				img.onclick = () => {
-					document.getElementById("content").style.opacity = 1;
-					document.getElementById("content").innerHTML = data[i].desc;
+					if (content.style.opacity == 0)
+						content.style.opacity = 1;
+					content.innerHTML = data[i].desc;
 				};
 				cell.appendChild(img);
 				row.appendChild(cell);
