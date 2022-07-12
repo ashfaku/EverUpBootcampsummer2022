@@ -70,7 +70,7 @@ W<!DOCTYPE HTML>
 			width: 28%;
 			height: auto;
 			left: 69%;
-			top: 10%;
+			top: 13%;
 			font-size: 2vw;
 			border: 2px solid red;
 			opacity: 0;			
@@ -94,21 +94,17 @@ W<!DOCTYPE HTML>
 				top: 8%;
 			}
 		}
-                #fixed
-                {
-                         position: fixed;
-                         bottom: 0;
-                }
-                #bottom
-                {
-                     align: center;
-                }
-                #bottom li
-                {
-                    display: inline;
-                    font-size: 2vw;
-                    padding: 5%;
-                }
+		#bottom
+		{
+			position: relative;
+			align: center;
+			text-align: center;
+		}
+		#bottom li
+		{
+			padding: 5%;
+			display: inline;
+		}
 		@media only screen and (max-width: 550px) 
 		{
 			body 
@@ -124,7 +120,7 @@ W<!DOCTYPE HTML>
 				top: 4%;
 			}
 		}
-		
+
 	</style>
 	<script>
 		function initialize()
@@ -242,7 +238,8 @@ W<!DOCTYPE HTML>
                <div id = "fixed">
                        <ul id = "bottom">
                           <li><a href = "index.html">Home</a></li>
-                          <li>Glaciers</li>
+                          <li><a href = "hiking.html">Hiking</a></li>
+						  <li>Glaciers</li>
                           <li>Contact</li>
                        </ul>
                </div>
