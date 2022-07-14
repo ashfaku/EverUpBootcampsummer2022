@@ -4,7 +4,12 @@
 	<style>
 		body
 		{
-			background-color: gray;
+			background: url('building.jpg') no-repeat center center fixed;
+			-webkit-background-size: cover;
+			-moz-background-size: cover; 
+			-o-background-size: cover;   
+			background-size: cover;      
+		
 		}
 		#circle
 		{
@@ -20,39 +25,95 @@
 			position: relative;
 			left: 15%;
 			top: 15%;
+			background-color: rgba(0, 0, 50, .5);
+			border-radius: 50%;
+			border-style: solid;
+			border-color: white;
+		}
+		.hand
+		{
+			transform-origin: 0%;
+			transform: rotate(-90deg);
+			position: absolute;
+			animation-fill-mode: forwards;  
 		}
 		#longhand
 		{
 			width: 7%;
-			position: absolute;
 			top: 19%;
-			left: 25%;
-			transform-origin: 0%;
-			animation: rotate 1s ease-in-out 0s infinite;
-			animation-fill-mode: forwards;  
+			left: 25.25%;
 		}	
+		#shorthand
+		{
+			width: 4%;
+			left: 25.5%;
+			top: 21%;
+		
+		}  
+		.shortclass
+		{
+			animation: rotate 3s ease-in-out 0s 1;
+		}
+		.longclass
+		{
+			animation: rotate 5s ease-in-out 0s 1;
+		}
+		
 		@keyframes rotate
 		{
 			0%
 			{
-				transform: rotate(0deg);
+				transform: rotate(-90deg);
 			}
 			100%
 			{
-				transform: rotate(40deg);
+				transform: rotate(270deg);
 			}
+		}
+		#anim
+		{
+			position: absolute;
+			top: 50%;
+			left: 25%;
+			width: 5%:
+			font-size: 3vw;
+		}
+		#bottomright
+		{
+			background-color: rgba(255, 255, 255, .5);
+			padding: 5%;
+			width: 30%;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			text-align: center;
+			color: red;
 		}
 	</style>
 	<script>
+		function anim()
+		{
+			document.getElementById("anim").disabled = true;
+			document.getElementById("longhand").classList.add("longclass");
+			document.getElementById("shorthand").classList.add("shortclass");
+			setTimeout(function() { 
+				document.getElementById("anim").disabled = false;
+				document.getElementById("longhand").classList.remove("longclass");
+				document.getElementById("shorthand").classList.remove("shortclass");
+				
+			}, 5000);
+		
+		}
 	</script>
 		<script src="https://kit.fontawesome.com/0137bf0349.js" crossorigin="anonymous"></script>
 
 	<body>
 		<div><i id = "circle" class="fa fa-circle" aria-hidden="true"></i></div>
 		<img src = "clock.png" id = "clock" />
-		<img src = "hand.png" id = "longhand" />
-	
-	
+		<img src = "hand.png" id = "longhand" class = "hand" />
+		<img src = "hand.png" id = "shorthand" class = "hand" />
+		<button id = "anim" onclick = "anim();">Click me!</button>
+		<div id = "bottomright">Click for more information</div>
 	
 	</body>
 
