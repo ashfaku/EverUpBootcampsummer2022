@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+	<title>Assignment 3</title>
+	<style>
+		body
+		{
+			background-color: gray;
+		}
+		#circle
+		{
+			position: absolute;
+			top: 21%;
+			left: 24.5%;
+			font-size: 2vw;
+		}
+		#clock
+		{
+			width: 20%;
+			height: auto;
+			position: relative;
+			left: 15%;
+			top: 15%;
+		}
+		#longhand
+		{
+			width: 7%;
+			position: absolute;
+			top: 19%;
+			left: 25%;
+			transform-origin: 0%;
+			animation: rotate 1s ease-in-out 0s infinite;
+			animation-fill-mode: forwards;  
+		}	
+		@keyframes rotate
+		{
+			0%
+			{
+				transform: rotate(0deg);
+			}
+			100%
+			{
+				transform: rotate(40deg);
+			}
+		}
+	</style>
+	<script>
+	</script>
+		<script src="https://kit.fontawesome.com/0137bf0349.js" crossorigin="anonymous"></script>
+
+	<body>
+		<div><i id = "circle" class="fa fa-circle" aria-hidden="true"></i></div>
+		<img src = "clock.png" id = "clock" />
+		<img src = "hand.png" id = "longhand" />
+	
+	
+	
+	</body>
+
+</html>
