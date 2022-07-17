@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<html>
+	<title>My Assignment 4 P1</title>
+	<style>
+		body, html
+		{
+			width: 100%;
+			height: 100%;
+		}
+		body
+		{
+			background: url('scenery.jpeg') no-repeat center center fixed;
+			-webkit-background-size: cover;
+			-moz-background-size: cover; 
+			-o-background-size: cover;   
+			background-size: cover;      	
+		}
+		#container
+		{
+			opacity: 1;
+			width: 80%;
+			height: 100vh;
+			position: relative;
+			left: 10%;
+			background-color: gray;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			pointer-events: auto;
+		}
+		.card
+		{
+			width: 40%;
+			height: 80%;
+			border-style: solid;
+			border-color: red;
+			margin-right: 5%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+	
+		}
+		figure
+		{
+			width: 100%;
+			height: 100%;	
+			position: relative;
+			top: 10%;
+			left: 18%;
+		}
+		figure img
+		{
+			width: 20vw;
+			height: 30vh;
+			padding: 5%;
+			position: relative;
+			left: 7%;
+		}
+		figure figcaption
+		{
+			font-size: 1.5vw;
+			position: relative;
+			left: 10%;
+		}
+		#container .card button
+		{
+			min-width: 50%;
+			font-size: 1vw;
+			height: 5vh;
+			position: relative;
+			top: 20%;
+			right: 40%;
+			border-radius: 10px;
+			background-color: orange;
+		}
+		#modal1
+		{
+			width: 100%;
+			height: 100%;
+			background-color: rgba(100, 100, 100, .5);
+			opacity: 0;
+			position: relative;
+			top: -100%;
+			pointer-events: none;
+		}
+		#modal1 #window
+		{
+			width: 50%;
+			height: 50%;
+			position: relative;
+			left: 25%;
+			top: 25%;
+			background-color: orange;
+		}
+		#modal1 #window .header
+		{
+			width: 100%:
+			height: 10%;
+			background-color: pink;
+			padding: 1%;
+		}
+		#modal1 #window p
+		{
+			background-color: red;
+			width: 80%;
+			position: relative;
+			left: 10%;
+			font-size: 1vw;
+		}
+		#modal1 #window img
+		{
+			width: 30%;
+			position: relative;
+			left: 35%;
+		}
+		#modal1 #window .header button
+		{
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		#modal2
+		{
+			width: 100%;
+			height: 100%;
+			background-color: rgba(100, 100, 100, .5);
+			opacity: 0;
+			position: relative;
+			top: -200%;
+			pointer-events: none;
+		}
+		#modal2 #window2
+		{
+			width: 50%;
+			height: 50%;
+			position: relative;
+			left: 25%;
+			top: 25%;
+			background-color: blue;
+		}
+		#modal2 #window2 .header
+		{
+			width: 100%:
+			height: 10%;
+			background-color: pink;
+			padding: 1%;
+		}
+		#modal2 #window2 p
+		{
+			background-color: red;
+			width: 80%;
+			position: relative;
+			left: 10%;
+			font-size: 1vw;
+		}
+		#modal2 #window2 img
+		{
+			width: 30%;
+			position: relative;
+			left: 35%;
+		}
+		#modal2 #window2 .header button
+		{
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+
+	</style>
+	<script>
+		function first()
+		{
+			console.log("hi");
+			document.getElementById("container").style.pointerEvents = "none";
+			document.getElementById("modal1").style.opacity = 1;
+			document.getElementById("modal1").style.pointerEvents = "auto";
+		}
+		function firstclose()
+		{
+			document.getElementById("modal1").style.pointerEvents = "none";
+			document.getElementById("modal1").style.opacity = 0;
+			document.getElementById("container").style.pointerEvents = "auto";
+		}
+		function second()
+		{
+			console.log(2);
+			document.getElementById("container").style.pointerEvents = "none";
+			document.getElementById("modal2").style.opacity = 1;
+			document.getElementById("modal2").style.pointerEvents = "auto";	
+		}
+		function secondclose()
+		{
+			document.getElementById("modal2").style.pointerEvents = "none";
+			document.getElementById("modal2").style.opacity = 0;
+			document.getElementById("container").style.pointerEvents = "auto";
+		
+		}
+	</script>
+	
+	<body>
+		<div id = "container">
+			<div class = "card">
+				<figure>
+					<img src = "left.jpg" /> <br>
+					<figcaption>Description of the first product</figcaption>
+				</figure>
+				<button onclick = "first();">First Modal</button>
+			</div>
+			<div class = "card">
+				<figure>
+					<img src = "right.webp" /> <br>
+					<figcaption>Description of the second product</figcaption>
+				</figure>
+				<button onclick = "second();">second modal</button>
+			</div>
+		</div>
+		
+		<div id = "modal1">
+			<div id = "window">
+				<div class = "header">
+					<span>Modal Window Example</span>
+					<button onclick = "firstclose();">X</button>
+				</div>
+				<p>This is a message in the modal window.This is a message in the modal window.This is a message in the modal window.</p> 	
+				<img src = "left.jpg" />
+			</div>
+		</div>
+		<div id = "modal2">
+			<div id = "window2">
+				<div class = "header">
+					<span>Modal Window Example</span>
+					<button onclick = "secondclose();">X</button>
+				</div>
+				<p>This is a message in the modal window.This is a message in the modal window.This is a message in the modal window.</p> 	
+				<img src = "right.webp" />
+			</div>
+		</div>
+	</body>
+</html>
