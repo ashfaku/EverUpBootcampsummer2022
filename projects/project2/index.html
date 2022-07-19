@@ -1,11 +1,105 @@
 <!DOCTYPE HTML>
 <html>
 	<title>My Project 2</title>
-	<style></style>
+	<style>
+		body, html
+		{
+			height: 100%;
+			width: 100%;
+			background-color: #ffffbf;
+		}
+		#container
+		{
+			width: 100%;
+			height: 100%;
+		}
+		#header
+		{
+			height: 20%;
+			position: relative;
+			top: 0;
+			display: flex;
+			align-items: center;
+		}
+		#header #img
+		{
+			position: relative;
+			border-style: solid;
+			border-color: green;
+			border-radius: 1vw;
+			height: 100%;
+			width: 10%;
+			margin-left: 10%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		#header #img img
+		{
+			height: 80%;
+			width: 80%;
+			animation: rotate 2s ease-in-out 0s infinite;		
+		}
+		@keyframes rotate
+		{
+			0%
+			{
+				transform: scale(.1);
+			}
+			100%
+			{
+				transform: scale(1);
+			}
+		}
+		#content
+		{
+			margin-left: 5%;
+		}
+		#top
+		{
+			font-size: 3vw;
+			font-family: cursive;
+		}
+		#bottom
+		{
+			font-size: 1vw;
+			font-weight: bold;
+		}
+		#slide
+		{
+			width: 80%;
+			margin-left: 10%;
+			height: 5%;
+			display: flex;
+			overflow: hidden;
+		}
+		#slide span
+		{
+			display: inline-block;
+			min-width: 100%;
+			height: 100%;
+			overflow: hidden;
+			background-color: red;
+			text-align: center;
+		}
+		
+	</style>
 	<script></script>
 	
 	<body>
-		<h1>Hi</h1>
+		<div id = "container">
+			<div id = "header">
+				<div id = "img"><img src = "images/logo.png" /></div>
+				<div id = "content">
+					<div id = "top">My Body Care Collection</div>
+					<div id = "bottom">Discover the exotic sensations of all seasons</div>
+				</div>
+			</div>
+			<div id = "slide">
+				<span>Today!</span>
+				<span>Hmm</span>
+			</div>
+		</div>
 	</body>
 
 </html>
