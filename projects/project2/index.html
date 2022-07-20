@@ -38,9 +38,9 @@
 		{
 			height: 80%;
 			width: 80%;
-			animation: rotate 2s ease-in-out 0s infinite;		
+			animation: scale 2s ease-in-out 0s infinite;		
 		}
-		@keyframes rotate
+		@keyframes scale
 		{
 			0%
 			{
@@ -79,14 +79,283 @@
 			min-width: 100%;
 			height: 100%;
 			overflow: hidden;
-			background-color: red;
 			text-align: center;
 		}
+		#one
+		{
+			background-color: red;
+			animation: move 5s ease-in-out 1s infinite;
+		}
+		#two
+		{
+			background-color: yellow;
+			animation: move 5s ease-in-out 1s infinite;
+		}
+		#three
+		{
+			background-color: orange;
+			animation: move 5s ease-in-out 1s infinite;
+		}
+		#four
+		{
+			background-color: yellow;		
+			animation: move 5s ease-in-out 1s infinite;
+		}
+		#five
+		{
+			background-color: green;
+			animation: move 5s ease-in-out 1s infinite;
 		
+		}
+		@keyframes move
+		{
+			0%
+			{
+				transform: translateX(0%);
+			}
+			12.5%
+			{
+				transform: translateX(0%);
+			}
+			25%
+			{
+				transform: translateX(-100%);
+			}
+			37.5%
+			{
+				transform: translateX(-100%);	
+			}
+			50%
+			{
+				transform: translateX(-200%);
+			}
+			62.5%
+			{
+				transform: translateX(-200%);
+			}
+			75%
+			{
+				transform: translateX(-300%);
+			}
+			87.5%
+			{
+				transform: translateX(-300%);
+			}
+			95%
+			{
+				transform: translateX(-400%);
+			}
+			100%
+			{
+				transform: translateX(-400%);
+			}
+		}
+		#flower
+		{
+			width: 80%;
+			height: auto;
+			margin-left: 10%;
+		}
+		#flower img
+		{
+			width: 100%;
+			height: 100%;
+		}
+		#flower p
+		{
+			position: absolute;
+			background-color: orange;
+			top: 30%;
+			left: 15%;
+			width: 30%;
+			font-size: 2vw;
+			padding: 2%;
+			border-style: solid;
+			border-color: white;
+			border-width: 5%;
+		}
+		#info
+		{
+			width: 100%;
+			height: 60%;
+			display: flex;
+		}
+		#left
+		{
+			width: 35%;
+			height: 100%;
+			position: relative;
+			margin-left: 12%;	
+		}
+		#left img
+		{
+			width: 100%;
+			height: 100%;
+		}
+		#left p
+		{
+			width: 40%;
+			color: white;
+			font-size: 2vw;
+			position: absolute;
+			left: 20%;
+			border-style: solid;
+			border-color: orange;
+			padding: 1%;
+		}
+		#llayer
+		{
+			background-image: linear-gradient(to right, rgba(255,182,193,.5), rgba(203,195,227,.5));
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+		#right
+		{
+			margin-left: 5%;
+			width: 35%;
+			height: 100%;
+			background-color: red;
+			text-align: center;
+			font-size: 1.5vw;
+		}
+		#sale
+		{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 50%;
+			position: relative;
+			top: 15%;
+		}
+		#sale hr
+		{
+			width: 90%;
+			margin-left: 5%;
+		}
+		.item
+		{
+			margin: 5%;
+			background-color: red;
+			text-align: center;
+			width: 20%;
+		}
+		.item .name
+		{
+			font-size: 2vw;
+			color: green;
+		}		
+		.item img
+		{
+			width: 100%;
+			height: auto;
+		}
+		.item h1
+		{
+			font-size: 1.5vw;
+		}
+		.item .quantity
+		{
+			font-size: .7vw;
+		}
+		.item .price
+		{
+			font-size: 2vw;
+		}
+		.item button
+		{
+			background-color: black;
+			color: white;
+			font-size: 1vw;
+			padding: 5%;
+		}
+		#modal
+		{
+			pointer-events: none;
+			position: fixed;
+			top: 25%;
+			left: 25%;
+			z-index: 1;
+			width: 50%;
+			height: 50%;
+			background-color: white;
+			opacity: 0;
+			font-size: 2vw;
+		}
+		#modalcontent
+		{
+			height: 100%;
+			width: 100%;
+			display: flex;
+		}
+		#modal div
+		{
+			font-size: 2vw;
+		}
+		#modal hr
+		{
+			width: 90%;
+			margin-left: 5%;
+		}
+		#modalimg
+		{
+			width: 50%;
+			height: 40%;
+		}
+		#name
+		{
+			font-weight: bold;
+		}
+		#modal button
+		{
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
 	</style>
-	<script></script>
+	<script>
+		function reveal(ritual, name, quantity, price, i)
+		{
+			document.getElementById("modal").style.opacity = 1;
+			document.getElementById("modal").style.pointerEvents = "auto";
+			document.getElementById("container").style.pointerEvents = "none";
+			console.log(ritual);
+			document.getElementById("ritual").innerHTML = ritual;
+			document.getElementById("modalimg").src = "images/item" + i + ".png"
+			console.log(name);
+			document.getElementById("name").innerHTML = name;
+			document.getElementById("quantity").innerHTML = quantity;
+			console.log(quantity);
+			document.getElementById("price").innerHTML = "$" + price;
+			console.log(price);
+		}
+		function hide()
+		{
+			document.getElementById("modal").style.pointerEvents = "none";
+			document.getElementById("modal").style.opacity = 0;
+			document.getElementById("container").style.pointerEvents = "auto";
+			
+ 		}
+	</script>
 	
 	<body>
+		<div id = "modal">
+			<button onclick = "hide();">X</button>
+			<div>It's in the bag!</div>
+			<hr>
+			<div id = "modalcontent">
+				<img src = "" id = "modalimg"/>
+				<div id = "modalinfo">
+					<div id = "ritual"></div>
+					<div id = "name"></div>
+					<div id = "quantity"></div>
+					<div id = "price"></div>
+				</div>
+			</div>
+		</div>
 		<div id = "container">
 			<div id = "header">
 				<div id = "img"><img src = "images/logo.png" /></div>
@@ -96,8 +365,55 @@
 				</div>
 			</div>
 			<div id = "slide">
-				<span>Today!</span>
-				<span>Hmm</span>
+				<span id = "one">1</span>
+				<span id = "two">2</span>
+				<span id = "three">3</span>
+				<span id = "four">4</span>
+				<span id = "five">5</span>
+			</div>
+			<div id = "flower">
+				<p>A 100%, natural, unique dry oil that nourishes the skin. Enriched with nourishing herbs, specifically put together according to the Ayurvedic tradtion for the Vata Dosha. With nourishing sweet almond oil and basil.</p>
+				<img src = "images/intro_img2.jpg" />
+			</div>
+			<div id = "info">
+				<div id = "left">
+					<p>Unique blend containing antioxidiants, vitamin E and the ingredient Centella Asiatica</p>
+					<img src = "images/intro_img1.jpg" />	
+					<div id = "llayer"></div>
+				</div>
+				<div id = "right">
+					<h1>strengthen your skin</h1>
+					<p>Technology makes this whipped cream easy to apply while its rich and velvety formulation nourishes your skin.</p>
+					<p>Enriched with nourishing rice milk and a flowery fragnance of cherry blossom.</p>
+				</div>
+			</div>
+			<h1>Body Lotion</h1>
+			<hr>	
+			<div id = "sale">
+				<div class = "item">
+					<img src = "images/item1.png" />
+					<div class = "name">The Ritual of sakura</div>
+					<h1>Cherry Blossom Hand Lotion</h1>
+					<div class = "quantity">Body lotion, 70ml</div>
+					<div class = "price">$12.5</div>
+					<button onclick = "reveal('The Ritual of sakura', 'Cherry Blossom Hand Lotion', 'Body Lotion, 70ml', 12.5, 1);">Add to Bag</button>
+				</div>
+				<div class = "item">
+					<img src = "images/item2.png" />
+					<div class = "name">The Ritual of Avurveda</div>
+					<h1>Himalaya Honey Body Cream</h1>
+					<div class = "quantity">Body cream, 70ml</div>
+					<div class = "price">$7.5</div>
+					<button onclick = "reveal('The Ritual of Avurveda', 'Himalaya Honey Body Cream', 'Body Cream, 70ml', 7.5, 2);">Add to Bag</button>
+				</div>
+				<div class = "item">
+					<img src = "images/item3.png" />
+					<div class = "name">The Ritual of sakura</div>
+					<h1>Organic Rice Milk Body Cream</h1>
+					<div class = "quantity">Body cream, 70ml</div>
+					<div class = "price">$10</div>
+					<button onclick = "reveal('The Ritual of sakura', 'Organic Rice Milk Body Cream', 'Body Cream, 70ml', 10, 3);">Add to Bag</button>
+				</div>
 			</div>
 		</div>
 	</body>
