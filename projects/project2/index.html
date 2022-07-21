@@ -4,9 +4,9 @@
 	<style>
 		body, html
 		{
-			height: 100%;
 			width: 100%;
-			background-color: #ffffbf;
+			height: 100%;
+			background-color: #FFFFBF;
 		}
 		#container
 		{
@@ -15,11 +15,12 @@
 		}
 		#header
 		{
-			height: 20%;
-			position: relative;
-			top: 0;
 			display: flex;
-			align-items: center;
+			width: 90%;
+			height: 20%;
+			font-size: 1vw;
+			padding: 1%;
+			font-family: cursive;
 		}
 		#header #img
 		{
@@ -30,6 +31,7 @@
 			height: 100%;
 			width: 10%;
 			margin-left: 10%;
+			margin-right: 5%;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -39,6 +41,43 @@
 			height: 80%;
 			width: 80%;
 			animation: scale 2s ease-in-out 0s infinite;		
+		}
+		#header #content
+		{
+			overflow: hidden;
+			width: 80%;
+		}
+		#header #content h1
+		{
+			transform: translateX(100%);
+			animation: left 5s ease-in-out 0s infinite;			
+		}
+		#header #content div
+		{
+			transform: translateY(300%);
+			animation: up 5s ease-in-out 0s infinite;
+		}
+		@keyframes up
+		{
+			0%
+			{
+				transform: translateY(300%);
+			}
+			50%
+			{
+				transform: translateY(0%);
+			}
+		}
+		@keyframes left
+		{
+			0%
+			{
+				transform: translateX(100%);
+			}
+			50%
+			{
+				transform: translateX(0%);
+			}
 		}
 		@keyframes scale
 		{
@@ -51,97 +90,79 @@
 				transform: scale(1);
 			}
 		}
-		#content
-		{
-			margin-left: 5%;
-		}
-		#top
-		{
-			font-size: 3vw;
-			font-family: cursive;
-		}
-		#bottom
-		{
-			font-size: 1vw;
-			font-weight: bold;
-		}
 		#slide
 		{
-			width: 80%;
-			margin-left: 10%;
-			height: 5%;
 			display: flex;
+			width: 80%;
+			margin-left: 11%;
+			font-size: 2vw;
 			overflow: hidden;
 		}
-		#slide span
+		#slide div
 		{
-			display: inline-block;
 			min-width: 100%;
-			height: 100%;
-			overflow: hidden;
 			text-align: center;
+			animation: slides 12s ease-in-out 0s infinite;
 		}
-		#one
+		#slide div:nth-child(1)
 		{
 			background-color: red;
-			animation: move 5s ease-in-out 1s infinite;
 		}
-		#two
-		{
-			background-color: yellow;
-			animation: move 5s ease-in-out 1s infinite;
-		}
-		#three
-		{
-			background-color: orange;
-			animation: move 5s ease-in-out 1s infinite;
-		}
-		#four
-		{
-			background-color: yellow;		
-			animation: move 5s ease-in-out 1s infinite;
-		}
-		#five
+		#slide div:nth-child(2)
 		{
 			background-color: green;
-			animation: move 5s ease-in-out 1s infinite;
-		
 		}
-		@keyframes move
+		#slide div:nth-child(3)
+		{
+			background-color: orange;
+		}
+		#slide div:nth-child(4)
+		{
+			background-color: blue;
+		}
+		#slide div:nth-child(5)
+		{
+			background-color: pink;
+		}
+		@keyframes slides
 		{
 			0%
 			{
 				transform: translateX(0%);
 			}
-			12.5%
+			10%
 			{
 				transform: translateX(0%);
 			}
-			25%
+			20%
 			{
 				transform: translateX(-100%);
 			}
-			37.5%
+			30%
 			{
-				transform: translateX(-100%);	
+				transform: translateX(-100%);
+			}
+			40%
+			{
+				transform: translateX(-200%);
 			}
 			50%
 			{
 				transform: translateX(-200%);
 			}
-			62.5%
-			{
-				transform: translateX(-200%);
-			}
-			75%
+			60%
 			{
 				transform: translateX(-300%);
 			}
-			87.5%
+			70%
 			{
 				transform: translateX(-300%);
 			}
-			95%
+			80%
+			{
+				transform: translateX(-400%);
+			}
+			90%
 			{
 				transform: translateX(-400%);
 			}
@@ -154,7 +175,7 @@
 		{
 			width: 80%;
 			height: auto;
-			margin-left: 10%;
+			margin-left: 11%;
 		}
 		#flower img
 		{
@@ -173,8 +194,7 @@
 			border-style: solid;
 			border-color: white;
 			border-width: 5%;
-		}
-		#info
+		}#info
 		{
 			width: 100%;
 			height: 60%;
@@ -221,111 +241,143 @@
 			text-align: center;
 			font-size: 1.5vw;
 		}
-		#sale
+		.title
 		{
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 100%;
-			height: 50%;
-			position: relative;
-			top: 15%;
+			font-size: 3vw;
 		}
-		#sale hr
+		hr
 		{
 			width: 90%;
+			color: black;
 			margin-left: 5%;
+		}
+		#lotions
+		{
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
 		}
 		.item
 		{
-			margin: 5%;
-			text-align: center;
 			width: 20%;
+			height: auto;
+			text-align: center;
+			padding: 5%;
+		}
+		.item .ritual
+		{
+			position: relative;
+			left: 25%;
+			color: green;
+			font-weight: bold;
+			font-size: 1vw;
+		
 		}
 		.item .name
 		{
-			font-size: 2vw;
-			color: green;
-		}		
-		.item img
-		{
-			width: 100%;
-			height: auto;
-		}
-		.item h1
-		{
 			font-size: 1.5vw;
+			position: relative;
+			left: 25%;
 		}
-		.item .quantity
+		.quantity
 		{
-			font-size: .7vw;
+			font-size: 1vw;
+			position: relative;
+			left: 25%;
 		}
-		.item .price
+		.price
 		{
 			font-size: 2vw;
+			font-weight: bold;
+			position: relative;
+			left: 25%;
 		}
-		.item .buy
+		.buy
 		{
+			position: relative;
+			left: 25%;
 			background-color: black;
 			color: white;
 			font-size: 1vw;
-			padding: 5%;
+			padding: 5%;	
 		}
 		.buy:hover
 		{
 			background-color: gray;
 		}
-		.item .hidden
+		@media screen and (max-width:990px)  and (min-width: 700px)
 		{
-			opacity: 0;
-			position: absolute;
-			bottom: -10%;
-			font-size: 1vw;
-			padding: 1%;
+			.item
+			{
+				width: 40%;
+			}
+		}
+		@media screen and (max-width:699px)
+		{
+			.item
+			{
+				width: 100%;
+			}
 		}
 		#modal
 		{
-			pointer-events: none;
 			position: fixed;
-			top: 25%;
-			left: 25%;
-			z-index: 1;
-			width: 50%;
-			height: 50%;
-			background-color: white;
 			opacity: 0;
-			font-size: 2vw;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			pointer-events: none;
+			background-image: linear-gradient(to right, rgba(255,182,193,.5), rgba(203,195,227,.5));
 		}
 		#modalcontent
 		{
-			height: 100%;
-			width: 100%;
-			display: flex;
-		}
-		#modal div
-		{
+			width: 50%;
+			height: 50%;
+			background-color: green;
+			position: relative;
+			left: 25%;
+			top: 25%;
 			font-size: 2vw;
+			padding: 1%;
 		}
-		#modal hr
+		#modalcontent #hide
 		{
-			width: 90%;
-			margin-left: 5%;
+			position: absolute;
+			top: 0;
+			right: 0;
+			background-color: transparent;
+			border: none;
+		}
+		#innermodal
+		{
+			width: 100%;
+			height: 100%;
+			display: flex;
 		}
 		#modalimg
 		{
 			width: 50%;
-			height: 40%;
+			height: 80%;
 		}
-		#name
-		{
-			font-weight: bold;
-		}
-		#modal button
+		#continue
 		{
 			font-size: 2vw;
+			background-color: purple;
+			color: red;
 			position: absolute;
-			top: 0;
-			right: 0;
+			bottom: 10%;
+		}
+		#giftsets
+		{
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.sale
+		{
+			width: 100%;
+			height: auto;
+			text-align: center;
 		}
 		#footer
 		{
@@ -352,7 +404,7 @@
 		{
 			width: 100%;
 			position: absolute;
-			right: -75%;
+			right: -72%;
 		}
 		#links img
 		{
@@ -369,78 +421,208 @@
 		}
 	</style>
 	<script>
-		function reveal(ritual, name, quantity, price, i)
-		{
-			document.getElementById("modal").style.opacity = 1;
-			document.getElementById("modal").style.pointerEvents = "auto";
-			document.getElementById("container").style.pointerEvents = "none";
-			console.log(ritual);
-			document.getElementById("ritual").innerHTML = ritual;
-			document.getElementById("modalimg").src = "images/" + i + ".png"
-			console.log(name);
-			document.getElementById("name").innerHTML = name;
-			document.getElementById("quantity").innerHTML = quantity;
-			console.log(quantity);
-			document.getElementById("price").innerHTML = "$" + price;
-			console.log(price);
-		}
-		function hide()
-		{
-			document.getElementById("modal").style.pointerEvents = "none";
-			document.getElementById("modal").style.opacity = 0;
-			document.getElementById("container").style.pointerEvents = "auto";
+		let lotionList = [
+			{
+				ritual: "The Ritual Of sakura",
+				name: "Cherry Blossom Hand Lotion",
+				quantity: "Body lotion, 70ml",
+				price: 12.5,
+				src: "images/item1.png"
+			},
+			{
+				ritual: "The Ritual Of Avurveda",
+				name: "Himalaya Honey Body Cream",
+				quantity: "Body cream, 70ml",
+				price: 7.5,
+				src: "images/item2.png"
+			},
+			{
+				ritual: "The Ritual Of sakura",
+				name: "Organic Rice Milk Body Cream",
+				quantity: "Body cream, 70ml",
+				price: 10,
+				src: "images/item3.png"
+			}
+		
+		];
+		let giftList = [
+			{
+				ritual: "The Ritual Of sakura",
+				name: "Rebalancing Ritual Gift set",
+				quantity: "Foaming shower gel 200ml, body scrub 125g, body cream 70ml, hand soap 300ml",
+				price: 37.5,
+				src: "images/gift_set1.png"
 			
- 		}
+			},
+			{
+				ritual: "The Ritual Of sakura",
+				name: "Renewing Treat Gift set",
+				quantity: "Foaming shower gel 50ml, body scrub 70g, body cream 70ml, hand soap 110ml",
+				price: 26.00,
+				src: "images/gift_set2.png"
+			},
+			{
+				ritual: "The Ritual Of Karma",
+				name: "soothing Ritual Gift set",
+				quantity: "Foaming shower gel 200ml, body scrub 125g, body cream 70ml, hand soap 300ml",
+				price: 20,
+				src: "images/gift_set3.png"
+			}
+		];
 		function init()
 		{
-			let e = document.getElementById(1);
-			let eh = document.getElementById("1h");
-			e.addEventListener('mouseover', function() {
-				e.style.backgroundColor = "gray";
-				eh.style.opacity = 1;
-			});
-			e.addEventListener('mouseout', function() {
-				e.style.backgroundColor = "black";
-				eh.style.opacity = 0;	
-			})
+			var lotionarea = document.getElementById("lotions");
 			
-			let e1 = document.getElementById(2);
-			let eh1 = document.getElementById("2h");
-			e1.addEventListener('mouseover', function() {
-				e1.style.backgroundColor = "gray";
-				eh1.style.opacity = 1;
-			});
-			e1.addEventListener('mouseout', function() {
-				e1.style.backgroundColor = "black";
-				eh1.style.opacity = 0;	
-			})
-			let e2 = document.getElementById(3);
-			let eh2 = document.getElementById("3h");
-			e2.addEventListener('mouseover', function() {
-				e2.style.backgroundColor = "gray";
-				eh2.style.opacity = 1;
-			});
-			e2.addEventListener('mouseout', function() {
-				e2.style.backgroundColor = "black";
-				eh2.style.opacity = 0;	
-			})
+			for (let i = 0; i < lotionList.length; i++)
+			{
+				var src = "images/item" + (i+1) + ".png";
+				console.log(lotionList[i]);
+				
+				let item = document.createElement("div");
+				item.classList.add("item");
+				
+				let img = document.createElement("img");
+				img.src = src;
+				item.appendChild(img);
+				
+				let ritual = document.createElement("div");
+				ritual.classList.add("ritual");
+				ritual.innerHTML = lotionList[i].ritual;
+				item.appendChild(ritual);
+				
+				let name = document.createElement("h1");
+				name.innerHTML = lotionList[i].name;
+				name.classList.add("name");
+				item.appendChild(name);
+				
+				let quantity = document.createElement("div");
+				quantity.classList.add("quantity");
+				quantity.innerHTML = lotionList[i].quantity;
+				item.appendChild(quantity);
+				
+				let price = document.createElement("div");
+				price.innerHTML = "$" + lotionList[i].price;
+				price.classList.add("price");
+				item.appendChild(price);
+				
+				let addToCart = document.createElement("button");
+				addToCart.innerHTML = "Add to shopping cart";
+				addToCart.classList.add("cart");
+				addToCart.style.position = "absolute";
+				addToCart.style.opacity = 0;
+				addToCart.style.zIndex = 1;
+				
+				addToCart.id = i;
+				item.appendChild(addToCart);
+				
+				
+				
+				let addToBag = document.createElement("button");
+				addToBag.innerHTML = "Add To Bag";
+				addToBag.classList.add("buy");
+				item.appendChild(addToBag);
+				
+				addToBag.onmouseover = function() {
+					document.getElementById(i).style.opacity = 1;
+				
+				};
+				addToBag.onmouseout = function() {
+					document.getElementById(i).style.opacity = 0;
+				
+				};
+				addToBag.onclick = function() {
+						reveal(lotionList[i], i);
+				};
+				
+				lotionarea.appendChild(item);
+			}
+			var giftarea = document.getElementById("giftsets");
+			for (let i = 0; i < giftList.length; i++)
+			{
+				var json = giftList[i];
+				var item = document.createElement("div");
+				item.classList.add("item");
+
+				var img = document.createElement("img");
+				img.src = json.src;
+				img.classList.add("sale");
+				item.appendChild(img);
 			
+				var ritual = document.createElement("div");
+				ritual.innerHTML = json.ritual;
+				ritual.classList.add("ritual");
+				item.appendChild(ritual);
 			
+				var name = document.createElement("h1");
+				name.innerHTML = json.name;
+				name.classList.add("name");
+				item.appendChild(name);
+				
+				var quantity = document.createElement("div");
+				quantity.classList.add("quantity");
+				quantity.innerHTML = json.quantity;
+				item.appendChild(quantity);
+			
+				var price = document.createElement("div");
+				price.classList.add("price");
+				price.innerHTML = "$" + json.price;
+				item.appendChild(price);
+				
+				var addToBag = document.createElement("button");
+				addToBag.innerHTML = "Add To Bag";
+				addToBag.classList.add("buy");
+				addToBag.onclick = function() {
+					reveal(json, i, 'g');
+				};
+				item.appendChild(addToBag);
+				
+				
+				giftarea.appendChild(item);
+			}
 		}
+		reveal = (json, i, l) => {
+			console.log(l);
+			document.getElementById("r").innerHTML = json.ritual;
+			document.getElementById("n").innerHTML = json.name;
+			document.getElementById("q").innerHTML = json.quantity;
+			document.getElementById("p");innerHTML = "$" + json.price;
+			document.getElementById("container").style.pointerEvents = "none";
+			document.getElementById("modal").style.pointerEvents = "auto";
+			document.getElementById("modal").style.opacity = 1;
+			document.getElementById("modalimg").src = json.src;
+			document.getElementById("continue").onclick = function()
+			{
+				var e;
+				if (l === 'g')
+					e = giftList[(i+1)%giftList.length];
+				else
+					e = lotionList[(i+1)%lotionList.length];
+				console.log(e);
+				reveal(e, i + 1, l);
+			};
+		};
+		hide = () => {
+			document.getElementById("modal").style.opacity = 0;
+			document.getElementById("modal").style.pointerEvents = "none";
+			document.getElementById("container").style.pointerEvents = "auto";
+		};
 	</script>
-	
 	<body onload = "init();">
 		<div id = "modal">
-			<button onclick = "hide();">X</button>
-			<div>It's in the bag!</div>
-			<hr>
 			<div id = "modalcontent">
-				<img src = "" id = "modalimg"/>
-				<div id = "modalinfo">
-					<div id = "ritual"></div>
-					<div id = "name"></div>
-					<div id = "quantity"></div>
-					<div id = "price"></div>
+				<button id = "hide" onclick = "hide();">X</button>
+				<div>It's in the bag!</div>
+				<hr>
+				<div id = "innermodal">
+					<img src = "" id = "modalimg" /> 
+					<div>
+						<div id = "r"></div>
+						<div id = "n"></div>
+						<div id = "q"></div>
+						<div id = "p"></div>
+						<p>I couldn't think of a description for each one, but here.</p>
+						<button id = "continue">Continue shopping</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -448,16 +630,16 @@
 			<div id = "header">
 				<div id = "img"><img src = "images/logo.png" /></div>
 				<div id = "content">
-					<div id = "top">My Body Care Collection</div>
-					<div id = "bottom">Discover the exotic sensations of all seasons</div>
+					<h1>My Body Care Collection</h1>
+					<div>Discover the exotic sensations of all seasons</div>
 				</div>
 			</div>
 			<div id = "slide">
-				<span id = "one">1</span>
-				<span id = "two">2</span>
-				<span id = "three">3</span>
-				<span id = "four">4</span>
-				<span id = "five">5</span>
+				<div>Limited time sale! 20% off any item with code <i>Lotion</i></div>
+				<div><strong>Today only!!!</strong> Free shipping throughout the world on select products</div>
+				<div>Use code <i>starrynight</i> to get a 2 for 1 deal on any item</div>
+				<div>Meh</div>
+				<div>Filler</div>
 			</div>
 			<div id = "flower">
 				<p>A 100%, natural, unique dry oil that nourishes the skin. Enriched with nourishing herbs, specifically put together according to the Ayurvedic tradtion for the Vata Dosha. With nourishing sweet almond oil and basil.</p>
@@ -475,72 +657,13 @@
 					<p>Enriched with nourishing rice milk and a flowery fragnance of cherry blossom.</p>
 				</div>
 			</div>
-			<h1>Body Lotion</h1>
-			<hr>	
-			<div id = "sale">
-				<div class = "item">
-					<img src = "images/item1.png" />
-					<div class = "name">The Ritual of sakura</div>
-					<h1>Cherry Blossom Hand Lotion</h1>
-					<div class = "quantity">Body lotion, 70ml</div>
-					<div class = "price">$12.5</div>
-					<button id = "1h" class = "hidden">Add to cart</button>			
-					<button id = "1" class = "buy" onclick = "reveal('The Ritual of sakura', 'Cherry Blossom Hand Lotion', 'Body Lotion, 70ml', 12.5, 'item1');">Add to Bag</button>
-				</div>
-				<div class = "item">
-					<img src = "images/item2.png" />
-					<div class = "name">The Ritual of Avurveda</div>
-					<h1>Himalaya Honey Body Cream</h1>
-					<div class = "quantity">Body cream, 70ml</div>
-					<div class = "price">$7.5</div>
-					<button id = "2h" class = "hidden">Add to cart</button>	
-					<button id = "2" class = "buy" onclick = "reveal('The Ritual of Avurveda', 'Himalaya Honey Body Cream', 'Body Cream, 70ml', 7.5, 'item2');">Add to Bag</button>
-				</div>
-				<div class = "item">
-					<img src = "images/item3.png" />
-					<div class = "name">The Ritual of sakura</div>
-					<h1>Organic Rice Milk Body Cream</h1>
-					<div class = "quantity">Body cream, 70ml</div>
-					<div class = "price">$10</div>
-					<button id = "3h" class = "hidden">Add to cart</button>
-					<button id = "3" class = "buy" onclick = "reveal('The Ritual of sakura', 'Organic Rice Milk Body Cream', 'Body Cream, 70ml', 10, 'item3');">Add to Bag</button>
-				</div>
-			</div>
-			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-			<h1>Gift sets</h1>
-			<hr>	
-			<div id = "sale">
-				<div class = "item">
-					<img src = "images/gift_set1.png" />
-					<div class = "name">The Ritual of sakura</div>
-					<h1>Rebalancing Ritual Gift set</h1>
-					<div class = "quantity">Foaming shower gel 200ml, body scrub 125g, body cream 70ml, hand soap 300ml</div>
-					<div class = "price">$37.5</div>
-					<button id = "1h" class = "hidden">Add to cart</button>			
-					<button id = "1" class = "buy" onclick = "reveal('The Ritual of sakura', 'Rebalancing Ritual Gift set', 'Foaming shower gel 200ml, body scrub 125g, body cream 70ml, hand soap 300ml', 37.5, 'gift_set1');">Add to Bag</button>
-				</div>
-				<div class = "item">
-					<img src = "images/gift_set2.png" />
-					<div class = "name">The Ritual of sakura</div>
-					<h1>Renewing Treat Gift set</h1>
-					<div class = "quantity">Foaming shower gel 50ml, body scrub 70g, body cream 70ml, hand soap 110ml</div>
-					<div class = "price">$26.00</div>
-					<button id = "1h" class = "hidden">Add to cart</button>			
-					<button id = "1" class = "buy" onclick = "reveal('The Ritual of sakura', 'Renewing Treat Gift set', 'Foaming shower gel 50ml, body scrub 70g, body cream 70ml, hand soap 110ml', 26, 'gift_set2');">Add to Bag</button>
-				</div>
-				<div class = "item">
-					<img src = "images/gift_set3.png" />
-					<div class = "name">The Ritual of Karma</div>
-					<h1>soothing Ritual Gift set</h1>
-					<div class = "quantity">Foaming shower gel 200ml, body scrub 125g, body cream 70ml, hand soap 300ml</div>
-					<div class = "price">$37.50</div>
-					<button id = "1h" class = "hidden">Add to cart</button>			
-					<button id = "1" class = "buy" onclick = "reveal('The Ritual of Karma', 'soothing Ritual Gift set', 'Foaming shower gel 200ml, body scrub 125g, body cream 70ml, hand soap 300ml', 37.5, 'gift_set3');">Add to Bag</button>
-				</div>
-		
-			</div>
-			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-			
+			<h1 class = "title">Body Lotion</h1>
+			<hr>
+			<div id = "lotions"></div>
+			<h1 class = "title">Gift sets</h1>
+			<hr>
+			<div id = "giftsets"></div>
+
 			<div id = "footer">
 				<div id = "top">
 					<div id = "help">
@@ -572,16 +695,14 @@
 						<img src = "images/icons/youtube.png" />
 						<img src = "images/icons/instagram.png" />
 						<img src = "images/icons/pin.png" />
-					
+						<!-- I didnt know if you wanted these to link to their websites !-->
 					</div>
 					<div>Connect with Josefina Body Care Collection</div>
 				</div>
 				<div id = "end">
 					@2021 Josefina Body Care Collection by <span>Ashfak Uddin</span>. All Rights Reserved.
 				</div>
-				
 			</div>
 		</div>
 	</body>
-
 </html>
