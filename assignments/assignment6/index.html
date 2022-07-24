@@ -1,0 +1,228 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Assignment 6</title>
+		<style>
+			body, html
+			{
+				width: 100%;
+				height: 100%;
+				background-image: linear-gradient(to right, rgba(255,182,193,.5), rgba(203,195,227,.5));
+			}
+			#buttons
+			{
+				background-color: black;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-wrap: wrap;
+				position: relative; 
+				top: 40%;
+			}
+			
+			#buttons button
+			{
+				width: 23%;
+				margin-left: 5%;
+				margin-right: 5%;
+				font-size: 2vw;
+				font-weight: bold;
+				padding: 1%;
+				text-align: center;
+				border-radius: 100px;
+			}
+			
+			@media screen and (max-width:1200px)
+			{
+				#buttons
+				{
+					top: 0%;
+				}
+				#modal
+				{
+					top: 10%;
+				}
+				#buttons button
+				{
+					margin-left: 0%;
+					margin-right: 0%;
+					font-size: 10vh;
+					min-width: 50%;
+				}
+			}
+			@media screen and (max-width:700px)
+			{
+				#buttons button
+				{
+					min-width: 100%;
+				}
+			}
+			#modalContainer
+			{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0%;
+				left: 0%;
+				background-color: rgba(0, 0, 0, .5);
+				z-index: 1;
+				opacity: 0;
+				pointer-events: none;
+			}
+			#modal
+			{
+				width: 75%;
+				height: 40%;
+				background-color: white;
+				position: relative; 
+				top: 30%;
+				left: 12.5%;
+				font-size: 2vw;
+			
+			}
+			#hide
+			{
+				position: absolute;
+				right: 0%;
+				top: 0%;
+			}
+			#modal hr
+			{
+				width: 90%;
+				position: relative;
+				left: 0%;
+			}
+			#modalP
+			{
+				width: 80%;
+				background-color: orange;
+				color: green;
+				position: relative;
+				left: 10%;
+			}
+			#animation
+			{
+				width: 100%;
+				height: 20%;
+				font-size: 1.5vw;
+				 background: url('forest.jpg') no-repeat center center fixed; 
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
+
+			}
+			#animation img
+			{
+				width: 10%;
+				height: 80%;
+				position: relative;
+			}
+			
+			#animation span
+			{
+				display: inline-block;
+				visibility: visible;
+				color: red;
+			}
+		</style>
+		<script src = "script.js"></script>
+		<script>
+			let id = null;
+			let pos = 1;
+			let direction = window.innerWidth / 750;
+			function reveal()
+			{
+				clearInterval(id);
+				var modalContainer = document.getElementById("modalContainer");
+				modalContainer.style.opacity = 1;
+				modalContainer.style.pointerEvents = "auto";
+				document.getElementById("buttons").style.pointerEvents = "none";
+			}
+			function hide()
+			{
+				id = setInterval(frame, 5);
+			
+				var modalContainer = document.getElementById("modalContainer");
+				modalContainer.style.opacity = 0;
+				modalContainer.style.pointerEvents = "none";
+				document.getElementById("buttons").style.pointerEvents = "auto";
+			
+			}
+			function init()
+			{
+				/*	
+				var div = document.getElementById("animation");
+				var text = "America has always been one continent - U.S geographers starting from the 1950s had started marking \"North\" and \"South\" America, and everyone just followed that. There is no cultural difference between the two continents - Central and/or Latin America are evidence of that. The reason this applies to continents but not countries is because countries *fight* to have their land, continents don't. The Panama Canal might be thought of here, but humans made that. It cannot have any bearing on what a continent is. We bought the Louisiana Purchase, as one example - so the difference between North USA and South USA has no bearing. But no one made a fake continent out of Central/Latin America, because they are not as visible on a map as the other two. Besides, there's a reason Central, United States of, North, South, and Latin all have \"America\" in their name! That misinformation has spread like a plague, just like how some people think Australia is a Continent. Everyone knows where New Zealand is, but no one knows where it exactly is - it, alongside some small clusters of random islands, are what cause Oceania to be relevant at all. This is also why the Olympic games have 5 rings; America, Oceania, Africa, Europe and Asia. One might say the 7 continent model is based on tectonic plates, but that's not the case either. India would be its own continent, Asia/Europe become the Eurasian continent. This conflict is mainly because there's no strict definition of what a continent is, aside from a large land mass. Heck, Google itself literally just lists continent names to define the word (which by the way, uses Austrailia - that for sure needs fixing). What's more useless than a geographer? A US geographer. The United States is at fault for a lot of stuff that no one cares about anymore because we've been taught to not care. We became the main authority on English because England is incompetent; losing control over such a mediocre language is pathetic.";
+				console.log(text);
+				for (let i = 0; i < text.length; i++)
+				{
+					var span = document.createElement("span");
+					span.innerHTML = text.charAt(i);
+					div.appendChild(span);
+					if (text.charAt(i) == ' ')
+						span.style.padding = ".15vw";
+					span.addEventListener('mouseover', function(event) {
+						span.style.color = "green";
+						
+						console.log(span);
+					});
+					//span.onmouseover = () => span.remove()
+				}
+				*/
+			}
+			function frame() 
+			{
+				var elem = document.getElementById("fly");   
+				var degree = 0;
+				if (pos >= (window.innerWidth*.88))
+					degree = 180;
+				if (pos >= (window.innerWidth*.9)) 
+				{
+					direction *= -1;
+					pos -= 5;
+					elem.style.transform = `rotateY(${degree}deg)`;
+				} 
+				else if (pos <= 0)
+				{
+					direction *= -1;
+					pos = 5;
+					elem.style.transform = `rotateY(${degree}deg)`;
+			
+				}
+				pos += direction;
+				elem.style.left = pos + "px"; 
+			}
+			function myMove() 
+			{
+				clearInterval(id);
+				id = setInterval(frame, 5);
+			
+			}
+			myMove();
+			
+		</script>
+	</head>
+	<body onload = "init();">
+		<div id = "modalContainer">
+			<div id = "modal">
+				<button id = "hide" onclick = "hide();">X</button>
+				<h1>Modal Title</h1>
+				<hr>
+				<p id = "modalP">
+					Text... Text... Text... Text... Text... Text... Text... Text... Text... Text... Text... Text... Text... Text... Text... Text... 
+				</p>
+			</div>
+		</div>
+		<h1>Hover over the text in this paragraph</h1>
+		<div id = "animation">
+			<img id = "fly" src = "bird.gif" />
+		</div>
+		<div id = "buttons">
+			<button  id = "1" onclick = "reveal();">One</button>
+			<button onclick = "reveal();">Two</button>
+			<button onclick = "reveal();">Three</button>		
+		</div>
+	</body>
+</html>
