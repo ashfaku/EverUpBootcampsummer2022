@@ -1,4 +1,4 @@
-/*CREATE TABLE movies_actors(
+CREATE TABLE movies_actors(
     actor_id INT,
     movie_id INT
 );
@@ -510,7 +510,7 @@ INSERT INTO movies (movie_name, movie_length, movie_lang, release_date, age_cert
 ('Way of the Dragon ','99','Chinese','1972-06-01','12','16');
 
 SELECT COUNT(*) from actors UNION ALL select COUNT(*) from directors UNION ALL select COUNT(*) 
-from movies UNION ALL select COUNT(*) from movie_revenues UNION ALL select COUNT(*) from movies_actors ;*/
+from movies UNION ALL select COUNT(*) from movie_revenues UNION ALL select COUNT(*) from movies_actors ;
 
 SELECT first_name, last_name FROM directors WHERE nationality IN ('British', 'French', 'German') AND
 date_of_birth BETWEEN '1950-01-01' AND '1980-12-31';
